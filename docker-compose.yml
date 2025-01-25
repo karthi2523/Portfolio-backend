@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  mysql-db:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: 2523
+      MYSQL_DATABASE: portfolio_tracker
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - portfolio-network
+
+  spring-boot-app:
+    image: spring-boot-app  # Replace with your actual Spring Boot image name
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/portfolio_tracker
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: 2523
+    depends_on:
+      - mysql-db
+    networks:
+      - portfolio-network
+
+networks:
+  portfolio-network:
+    driver: bridge
+
+volumes:
+  mysql-data:
