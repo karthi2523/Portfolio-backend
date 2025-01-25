@@ -38,10 +38,10 @@
             <scope>runtime</scope>
         </dependency>
         <dependency>
-    <groupId>mysql</groupId>
-    <artifactId>mysql-connector-java</artifactId>
-    <version>8.0.26</version> <!-- Adjust version as needed -->
-    </dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.26</version> <!-- Adjust version as needed -->
+         </dependency>
 
 
         <!-- Lombok (optional, but useful for reducing boilerplate) -->
