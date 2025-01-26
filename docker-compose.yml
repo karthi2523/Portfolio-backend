@@ -14,7 +14,7 @@ services:
       - portfolio-network
 
   spring-boot-app:
-    image: spring-boot-app  # Replace with your actual Spring Boot image name
+    image: spring-boot-app 
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/portfolio_tracker
       SPRING_DATASOURCE_USERNAME: root
